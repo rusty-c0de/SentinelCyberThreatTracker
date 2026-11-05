@@ -1,6 +1,6 @@
 # Sentinel
 
-Sentinel is a shared cyber activity dashboard for reporting alerts against a fixed catalog of 15 U.S. military installations. It maps reported sources and targets on an interactive globe and provides a separate commander overview.
+Developed for the CDAO Navy SI Hackathon: Fleethacker, **Sentinel** is a cyber communication and situational awareness platform built to bridge information gaps across the fleet and joint force. Cyber incidents are reported by installations and mapped on an interactive globe where operators can track threats and communicate directly with a point of contact (POC) at affected installations.
 
 This repository contains the application source. Existing hosted reports, uploaded logs, contacts, sessions, and commander documents live in external storage and are not included.
 
