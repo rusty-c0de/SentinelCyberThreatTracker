@@ -17,7 +17,7 @@ This repository contains the application source. Existing hosted reports, upload
 
 React 19, TypeScript, Vinext 1.0.0-beta.5, Vite 8, Tailwind CSS 4, and Lucide icons. The backend runs in Cloudflare Workers with D1 (SQLite) and R2. Drizzle maintains the database schema and migrations. pnpm manages dependencies.
 
-Vinext implements the Next.js App Router conventions used here. This is a server application; GitHub Pages cannot host its API, authentication, database, or log storage.
+Vinext implements the Next.js App Router conventions used here. This is a server application.
 
 ## Structure
 
@@ -124,26 +124,9 @@ Cloudflare may require confirmation when creating a Worker for the first secret.
 
 For schema changes, update `db/schema.ts`, run `pnpm db:generate`, review the resulting SQL, and commit both the SQL and Drizzle metadata. Apply new migrations locally before targeting production.
 
-## Push to GitHub
-
-Create or use an empty repository, then run these commands from this project root, replacing the remote with your shared repository URL:
-
-```bash
-git init
-git add .
-git status
-git commit -m "Import curated Sentinel source"
-git branch -M main
-git remote add origin https://github.com/YOUR-ORG/YOUR-REPO.git
-git push -u origin main
-```
-
-Review staged files before committing. Do not force-push over existing history; if the shared repository already contains work, import into a branch in an existing clone and open a pull request. Use the extracted source directory rather than uploading the ZIP itself. Dependency count is unrelated to GitHub's web upload batch limits; normal Git pushes handle this source tree.
 
 ## Before operational use
 
-The existing access model uses shared passwords, including the additional commander gate. It does not establish individual identity or role membership. Plan identity-based access separately if your operational requirements call for it. Pattern results describe submitted evidence and require analyst review.
+The existing access model uses shared passwords, including the additional commander gate. It does not establish individual identity or role membership at this time.
 
-Installation POC defaults intentionally use non-deliverable `example.invalid` email addresses. Update contacts before sending real coordination emails. Existing production D1/R2 data requires a separate, authorized migration and should not be committed to a repository.
-
-No project-wide open-source license was supplied. Choose an appropriate license and confirm permissions for supplied branding before public distribution. Retained third-party notices accompany their files; map attribution is in `public/map-attribution.txt`.
+Installation POC defaults intentionally use non-deliverable `example.invalid` email addresses. These are all sample email addresses for demo purposes.
